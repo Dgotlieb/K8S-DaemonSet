@@ -1,21 +1,20 @@
+--- 
 apiVersion: extensions/v1beta1
 kind: DaemonSet
-metadata:
-  labels:
-    app: nginx
-  name: nginx-daemon-set
-spec:
-  template:
-    metadata:
-      annotations:
-        "scheduler.alpha.kubernetes.io/name": poseidon
-      labels:
-        name: nginx-daemon-set
-        scheduler: poseidon
-    spec:
-      containers:
-      containers:
-        - name: nginx
-          image: "nginx:1.11.1-alpine"
-          ports:
-             - containerPort: 80
+metadata: 
+  name: frontend
+spec: 
+  template: 
+    metadata: 
+      labels: 
+        app: frontend-webserver
+    spec: 
+      containers: 
+        - 
+          image: nginx
+          name: webserver
+          ports: 
+            - 
+              containerPort: 80
+      nodeSelector: 
+        app: frontend-node
