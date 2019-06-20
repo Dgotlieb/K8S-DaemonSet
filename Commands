@@ -1,0 +1,14 @@
+# Create DaemonSet
+$ kubectl apply -f nginx-daemon-set.yaml
+
+# Check all DaemonSets
+$ kubectl get DaemonSets
+
+# Check pods
+$ kubectl get pods
+
+# Check nodes 
+$ kubectl get nodes
+
+# label minikube as frontend
+$ kubectl label node minikube app=frontend-node
